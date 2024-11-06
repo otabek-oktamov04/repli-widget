@@ -5,13 +5,12 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: "./src/main.tsx", // Main entry point of your widget
-      name: "MyWidget", // The global name of your widget
-      fileName: "my-widget", // The output filename
-      formats: ["umd"], // Universal Module Definition format for compatibility
+      entry: "./src/main.tsx", // Entry point with the `render` function
+      name: "MyWidget", // Global name for the widget
+      fileName: "my-widget",
+      formats: ["umd"],
     },
     rollupOptions: {
-      // Externalize dependencies if needed
       external: ["react", "react-dom"],
       output: {
         globals: {
